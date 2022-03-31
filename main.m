@@ -12,9 +12,10 @@
 % MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
 % Public License for more details.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+close all;
 alpha = 90;
 T1 = [260, 780, 920, 3000];
-time = 0:0.01:20;
+time = 0:1:3000;
 figure("Name","Mz vs time")
 
 for p = 1:length(T1)
@@ -30,7 +31,7 @@ for p = 1:length(T1)
 %     subplot(1,2,1)
     figure(1)
     plot(time, M_z);
-    xlabel("time (s)");
+    xlabel("time (ms)");
     ylabel("Mz");
     hold off
 
@@ -38,13 +39,13 @@ for p = 1:length(T1)
 %     subplot(1,2,2)
     figure(2)
     plot(time, Mz_mag);
-    xlabel("time (s)");
+    xlabel("time (ms)");
     ylabel("|Mz|");
     hold off
     
 end
 hold off
 figure(1)
-legend(["Fat", "WM", "GM", "CSF"])
+legend(["Fat", "WM", "GM", "CSF"],'location',"Southeast")
 figure(2)
 legend(["Fat", "WM", "GM", "CSF"])
